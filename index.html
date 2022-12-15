@@ -14,6 +14,7 @@
               <p class="title">Riq's MEGA SENA</p>
               <div id="numbersDiv">
               </div>
+              <div id="rightsReserved"></div>
               <form>  
                 <input type = "button" onclick = "PrintListNumbersAtDocument(GenerateMegaSenaNumbers())" value = "BE RICH!" class="richButton">   
               </form>
@@ -60,6 +61,10 @@
                                                       </div>
                                                     </div>
                                                       `;
+      document.getElementById("rightsReserved").innerHTML = `
+
+      <p> *** 1% of the money goes to riq  </p>
+      `;
 
     }
     </script>
