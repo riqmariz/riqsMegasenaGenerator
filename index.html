@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>riq's mega sena generator</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="mainFrame" id="frame">
+    <div>
+            <div id="demo" class="mainFrameContainer">
+              <p class="title">Riq's MEGA SENA</p>
+              <div id="numbersDiv">
+              </div>
+              <form>  
+                <input type = "button" onclick = "PrintListNumbersAtDocument(GenerateMegaSenaNumbers())" value = "BE RICH!" class="richButton">   
+              </form>
+            </div>
+    </div>
+  </div>
+  </img>
+</body>
+</html>
+<script type = "text/javascript">
+    
+    function getRndInteger(min, max) {
+      return Math.floor(Math.random() * (max - min) ) + min;
+    }
+
+    function GenerateMegaSenaNumbers(){
+      var listNumber = [];
+      while(listNumber.length < 6){
+          var randomNumber = getRndInteger(1,60);
+          var repeated = false;
+          listNumber.forEach(number => {
+              if(number == randomNumber){
+                  repeated = true;
+              }
+          });
+          if(!repeated){
+            listNumber.push(randomNumber);
+          }
+      }
+    
+      return listNumber.sort( (a,b) => a - b);
+    }
+
+    function PrintListNumbersAtDocument(listNumber){
+      var numberLine = "";
+      listNumber.forEach(number => numberLine = numberLine+number+" ");
+
+      document.getElementById("numbersDiv").innerHTML = `
+                                                    <div class="framePoem">
+                                                      <div class="numbersText">
+                                                      
+                                                        <p>${numberLine}</p>
+
+                                                      </div>
+                                                    </div>
+                                                      `;
+
+    }
+    </script>
