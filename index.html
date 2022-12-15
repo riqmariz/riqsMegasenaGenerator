@@ -24,10 +24,15 @@
   </img>
 </body>
 </html>
+<script src="https://cdn.rawgit.com/nquinlan/better-random-numbers-for-javascript-mirror/master/support/js/Mash.js"></script>
+<script src="https://cdn.rawgit.com/nquinlan/better-random-numbers-for-javascript-mirror/master/support/js/Alea.js"></script>
 <script type = "text/javascript">
-    
+
     function getRndInteger(min, max) {
-      return Math.floor(Math.random() * (max - min) ) + min;
+      var random = new Alea().fract53;
+      var numberRandom = random();
+      console.log(numberRandom)
+      return Math.floor(numberRandom * (max - min) ) + min;
     }
 
     function GenerateMegaSenaNumbers(){
